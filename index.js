@@ -22,7 +22,12 @@ client.on("message", async function(message) {
             break;
 			
             case "help":
-			
+			message.channel.send({embed: new Discord.RichEmbed()
+            			.setColor("#1b82cc")
+            			.setTitle("Feudal Clan Bot")
+				.addField(".ba", "Gives access for a clan owner/rep to a battle channel.")
+				.addField(".de", "Removes access from a clan owner/rep to a battle channel.")
+        		})
             break;
                         
 			
