@@ -20,7 +20,7 @@ client.on("message", async function(message) {
 		    
             case "lock":
                     message.delete()
-		    message.channel.updateOverwirte(channel.guild.roles.everyone, { VIEW_CHANNEL: false });
+                    message.channel.overwritePermissions(channel.guild.roles.everyone, { 'VIEW_CHANNEL': false });
 		    message.channel.send("[TEST] - This channel has been locked.")
             break;
                             
