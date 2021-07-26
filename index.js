@@ -21,7 +21,8 @@ client.on("message", async function(message) {
             case "lock":
                     message.delete()
                     message.channel.overwritePermissions(channel.guild.roles.everyone, { 'VIEW_CHANNEL': false });
-		    message.channel.send("[TEST] - This channel has been locked.")
+		    message.channel.send("[TEST] - ${message.channel.name} has been locked.")
+                    client.channels.cache.get("869262388292104243").send("[TEST] - ${message.channel.name} has been locked.")
             break;
                             
         }
