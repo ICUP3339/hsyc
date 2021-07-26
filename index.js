@@ -16,13 +16,6 @@ client.on("message", async function(message) {
                 message.delete()
                 message.channel.bulkDelete(args[1]);
             break;
-            case "dnd":
-                message.delete()
-                client.user.setStatus("dnd")
-                message.channel.send(":red_circle: **Do Not Disturb** status was set.")
-                lm = message.channel.lastMessageID; message.guild.
-                delMsg = true;
-            break;
 		    
             case "lock":
                     message.delete()
