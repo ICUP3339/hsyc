@@ -12,19 +12,21 @@ client.on("message", async function(message) {
         if (!message.content.startsWith(".")) return;
         var args = message.content.substring(".".length).split(" ");
         switch (args[0].toLowerCase()) {
+			
+			
+			
             case "clear":
                 if(!args[1]) return;
                 message.delete()
                 message.channel.bulkDelete(args[1]);
             break;
-		    
-            case "lock":
-                    message.delete()
-                    message.channel.overwritePermissions(channel.guild.roles.everyone, { 'VIEW_CHANNEL': false });
-		    message.channel.send("[TEST] - ${message.channel.name} has been locked.")
-                    client.channels.cache.get("869262388292104243").send("[TEST] - ${message.channel.name} has been locked.")
+			
+            case "help":
+			
             break;
-                            
+                        
+			
+			
         }
 });
 
