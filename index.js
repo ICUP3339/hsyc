@@ -20,29 +20,13 @@ client.on("message", async function(message) {
 		    
             case "lock":
                     message.delete()
-                    message.channel.updateOverwrite(channel.guild.roles.everyone, { VIEW_CHANNEL: false });
+		    message.channel.updateOverwirte(channel.guild.roles.everyone, { VIEW_CHANNEL: false });
 		    message.channel.send("[TEST] - This channel has been locked.")
             break;
                             
         }
 });
 
-var s = 0;
-var dms = 0;
-var delMsg = false;
-var lm;
-
-function t(){
-        s++;
-        if(delMsg == true){
-                dms++;
-                if(dms == 4){
-                        client.channels.get("")
-                }
-        }
-}
-
-setInterval(t,1000);
 
 
 client.login(process.env.TOKEN);
