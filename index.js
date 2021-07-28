@@ -289,6 +289,18 @@ switch (args[0].toLowerCase()) {
 
 
 
+    // TEMPORARY COMMANDS
+
+    case "apply":
+        message.delete();
+        if(message.channel.id == "869635312396140644"){
+            client.channels.cache.get("869637886910271528").send("https://tenor.com/view/rainbow-color-line-colorful-change-color-gif-17422882")
+            client.channels.cache.get("869637886910271528").send("**`" + message.author.username + "#" + message.author.discriminator + "`'s Application:**" + `
+            ` + message.content.split(".apply ").join(" "))
+        }
+    break;
+
+
 
 
     // OWNER COMMANDS
