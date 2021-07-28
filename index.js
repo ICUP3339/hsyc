@@ -11,7 +11,12 @@ var fnrole = "869331552188891146"
 var wummyrole = "869303405460459520"
 var bdsmrole = "869373802205818921"
 var tdrrole = "869727243587440650"
+var fakerole = "870033353372479488"
 var rh = ""
+var ownerclan = ""
+var nameclan = ""
+var battlechannel = ""
+var battlerole = ""
 
 var clanname = "";
 var clanowner = "";
@@ -33,6 +38,7 @@ client.on("message", message => {
             message.member.roles.remove(wummyrole) //Wummy
             message.member.roles.remove(bdsmrole) //BDSM
             message.member.roles.remove(tdrrole) //TDR
+            message.member.roles.remove(fakerole) //FaKe
             message.member.roles.add("869643087100657715");
         }
         if(message.content.split(".iam ") == ",FN" && !message.member.roles.cache.has("869643087100657715")){
@@ -45,6 +51,7 @@ client.on("message", message => {
             message.member.roles.remove(wummyrole) //Wummy
             message.member.roles.remove(bdsmrole) //BDSM
             message.member.roles.remove(tdrrole) //TDR
+            message.member.roles.remove(fakerole) //FaKe
             message.member.roles.add("869643087100657715");
         }
         if(message.content.split(".iam ") == ",Wummy" || message.content.split(".iam ") == ",wummy" && !message.member.roles.cache.has("869643087100657715")){
@@ -57,6 +64,7 @@ client.on("message", message => {
             message.member.roles.add(wummyrole) //Wummy
             message.member.roles.remove(bdsmrole) //BDSM
             message.member.roles.remove(tdrrole) //TDR
+            message.member.roles.remove(fakerole) //FaKe
             message.member.roles.add("869643087100657715");
         }
         if(message.content.split(".iam ") == ",BDSM" && !message.member.roles.cache.has("869643087100657715")){
@@ -69,6 +77,7 @@ client.on("message", message => {
             message.member.roles.remove(wummyrole) //Wummy
             message.member.roles.add(bdsmrole) //BDSM
             message.member.roles.remove(tdrrole) //TDR
+            message.member.roles.remove(fakerole) //FaKe
             message.member.roles.add("869643087100657715");
         }
         if(message.content.split(".iam ") == ",TDR" && !message.member.roles.cache.has("869643087100657715")){
@@ -81,6 +90,20 @@ client.on("message", message => {
             message.member.roles.remove(wummyrole) //Wummy
             message.member.roles.remove(bdsmrole) //BDSM
             message.member.roles.add(tdrrole) //TDR
+            message.member.roles.remove(fakerole) //FaKe
+            message.member.roles.add("869643087100657715");
+        }
+        if(message.content.split(".iam ") == ",FaKe" && !message.member.roles.cache.has("869643087100657715")){
+            message.member.setNickname("[FaKe/Member] " + message.author.username)
+            message.reply("you have joined **FaKe**.")
+            message.member.roles.remove("868782125028098089")
+            message.member.roles.add("869304724309045378")
+            message.member.roles.remove(tfcrole) //TFC
+            message.member.roles.remove(fnrole) //FN
+            message.member.roles.remove(wummyrole) //Wummy
+            message.member.roles.remove(bdsmrole) //BDSM
+            message.member.roles.remove(tdrrole) //TDR
+            message.member.roles.add(fakerole) //FaKe
             message.member.roles.add("869643087100657715");
         }
 
@@ -95,6 +118,7 @@ client.on("message", message => {
             message.member.roles.remove(wummyrole) //Wummy
             message.member.roles.remove(bdsmrole) //BDSM
             message.member.roles.remove(tdrrole) //TDR
+            message.member.roles.remove(fakerole) //FaKe
         } else {
         }
     }
@@ -158,35 +182,42 @@ switch (args[0].toLowerCase()) {
             clanowner = "<@449051636896104448>";
             clandiscord = "https://discord.gg/DaTvhMMVFG";
             clancolor = "2c9fd0";
-            clanlogo = "https://cdn.discordapp.com/attachments/869302960990093312/869310012734980136/frostcore_1_1.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979306846220318/frostcore_1_1.png"
         }
         if(message.content.split(".claninfo ") == ",Wummy" || message.content.split(".claninfo ") == ",wummy"){
             clanname = "Wummy";
             clanowner = "<@721895613809033237>";
             clandiscord = "https://discord.gg/544tUC7q";
             clancolor = "ee6951";
-            clanlogo = "https://media.discordapp.net/attachments/855789700538433557/869303110407954462/197bc6f732498eb313029a108eb115d1.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979360688472084/197bc6f732498eb313029a108eb115d1.png"
         }
         if(message.content.split(".claninfo ") == ",FN"){
             clanname = "Fire Nation (FN)";
             clanowner = "<@721298502973390859>";
-            clandiscord = "Unavailable.";
+            clandiscord = "https://discord.gg/gBD63n6NSX";
             clancolor = "ae2020";
-            clanlogo = "https://cdn.discordapp.com/attachments/866773686630481929/869346269519286272/FN_lofo.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979405546565704/FN_lofo.png"
         }
         if(message.content.split(".claninfo ") == ",BDSM"){
             clanname = "BDSM";
             clanowner = "<@494285581053067294>";
             clandiscord = "https://discord.gg/NyVAzCthEh";
             clancolor = "bf9944";
-            clanlogo = "https://cdn.discordapp.com/attachments/869302960990093312/869431342054649886/image0.jpg"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979472609300500/image0.png"
         }
         if(message.content.split(".claninfo ") == ",TDR"){
             clanname = "The Death Realm (TDR)";
             clanowner = "<@710320340466925628>";
             clandiscord = "https://discord.gg/N8m4PQG4";
             clancolor = "ff3030";
-            clanlogo = "https://cdn.discordapp.com/attachments/869743818998702101/869743873419800626/TDR_SIGN.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979567467683900/TDR_SIGN.png"
+        }
+        if(message.content.split(".claninfo ") == ",FaKe"){
+            clanname = "FaKe";
+            clanowner = "<@700323928014323792> & <@854447230568235048>";
+            clandiscord = "https://discord.gg/NqPGBqqvhy";
+            clancolor = "101020";
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/870036396667179028/fake.png"
         }
 
         const embed4 = new Discord.MessageEmbed()
@@ -205,7 +236,16 @@ switch (args[0].toLowerCase()) {
     break;
 
     case "clans":
-        message.channel.send("`.clans` is coming soon.")
+        const embed5 = new Discord.MessageEmbed()
+            .setColor("#1b82cc")
+            .setTitle("**Currently registered clans:**")
+            .setDescription(`<@&869373802205818921>
+<@&870033353372479488>
+<@&869331552188891146>
+<@&869727243587440650>
+<@&869310095706718340>
+<@&869303405460459520>`)
+        message.channel.send(embed5)
     break;
 
     case "ping":
@@ -250,6 +290,12 @@ switch (args[0].toLowerCase()) {
                 a.roles.remove("869304724309045378")
                 a.setNickname("[" + rh + "/Rep]")
             }
+            if(message.member.roles.cache.has(tfcrole) && a.roles.cache.has(tfcrole)){
+                rh = "FaKe"
+                a.roles.add("869257648875380816")
+                a.roles.remove("869304724309045378")
+                a.setNickname("[" + rh + "/Rep]")
+            }
         }
     break;
 
@@ -258,13 +304,137 @@ switch (args[0].toLowerCase()) {
     
     case "ba":
         if(message.member.roles.cache.has("869232215958097960")){
-            message.channel.send("`.ba` is coming soon.")
+            if(args[1] == "1"){
+                battlechannel = "<#869259094308032564>"
+                battlerole = "869916373600567338"
+            } if(args[1] == "2"){
+                battlechannel = "<#869259116525268992>"
+                battlerole = "869916399999516703"
+            } if(args[1] == "3"){
+                battlechannel = "<#869259132367155270>"
+                battlerole = "869916417925980161"
+            } if(args[1] == "4"){
+                battlechannel = "<#869259151673540669>"
+                battlerole = "869916436242509854"
+            } if(args[1] == "5"){
+                battlechannel = "<#869259169297993828>"
+                battlerole = "869916456714911754"
+            } if(args[1] == "6"){
+                battlechannel = "<#869259191523606589>"
+                battlerole = "869916480043626506"
+            } if(args[1] == "7"){
+                battlechannel = "<#869259208837718036>"
+                battlerole = "869916497127034902"
+            } if(args[1] == "8"){
+                battlechannel = "<#869259229159129138>"
+                battlerole = "869916519344242698"
+            } if(args[1] == "9"){
+                battlechannel = "<#869259256556322847>"
+                battlerole = "869916550025588806"
+            } if(args[1] == "10"){
+                battlechannel = "<#869259281072001105>"
+                battlerole = "869916579184382032"
+            } if(args[1] == "11"){
+                battlechannel = "<#869934958012137512>"
+                battlerole = "869990176468918302"
+            }
+            if(args[2] == "FN"){
+                ownerclan = "721298502973390859"
+                nameclan = "FN"
+            } if(args[2] == "TFC"){
+                ownerclan = "449051636896104448"
+                nameclan = "TFC"
+            } if(args[2] == "BDSM"){
+                ownerclan = "494285581053067294"
+                nameclan = "BDSM"
+            } if(args[2] == "TDR"){
+                ownerclan = "710320340466925628"
+                nameclan = "TDR"
+            } if(args[2] == "Wummy" || args[2] == "wummy"){
+                ownerclan = "721895613809033237"
+                nameclan = "Wummy"
+            } if(args[2] == "FaKe"){
+                ownerclan = "700323928014323792"
+                nameclan = "FaKe"
+            }
+                //message.guild.members.cache.get(ownerclan).roles.add(battlerole);
+                //battlechannel = message.guild.channels.cache.find("name", "🔒-battle-" + args[1])
+            //var xx = message.guild.roles.cache.find("name", "battle " + args[1])
+            //var oo = message.guild.members.cache.get(ownerclan);
+            //message.guild.members.cache.get(ownerclan).roles.add(battlerole);
+            //client.users.cache.get(ownerclan).send("Your clan is having a war now. Check " + battlechannel + ".")
+            //message.channel.send("<@" + ownerclan + ">, <@&" + battlerole + ">")
+            if(battlechannel.length > 0 && nameclan.length > 0){
+                message.channel.send("**[" + nameclan + "]** was given access to " + battlechannel + ".")
+            }
+            battlechannel = ""
+            nameclan = ""
         }
     break;
     
     case "de":
         if(message.member.roles.cache.has("869232215958097960")){
-            message.channel.send("`.de` is coming soon.")
+            if(args[1] == "1"){
+                battlechannel = "<#869259094308032564>"
+                battlerole = "869916373600567338"
+            } if(args[1] == "2"){
+                battlechannel = "<#869259116525268992>"
+                battlerole = "869916399999516703"
+            } if(args[1] == "3"){
+                battlechannel = "<#869259132367155270>"
+                battlerole = "869916417925980161"
+            } if(args[1] == "4"){
+                battlechannel = "<#869259151673540669>"
+                battlerole = "869916436242509854"
+            } if(args[1] == "5"){
+                battlechannel = "<#869259169297993828>"
+                battlerole = "869916456714911754"
+            } if(args[1] == "6"){
+                battlechannel = "<#869259191523606589>"
+                battlerole = "869916480043626506"
+            } if(args[1] == "7"){
+                battlechannel = "<#869259208837718036>"
+                battlerole = "869916497127034902"
+            } if(args[1] == "8"){
+                battlechannel = "<#869259229159129138>"
+                battlerole = "869916519344242698"
+            } if(args[1] == "9"){
+                battlechannel = "<#869259256556322847>"
+                battlerole = "869916550025588806"
+            } if(args[1] == "10"){
+                battlechannel = "<#869259281072001105>"
+                battlerole = "869916579184382032"
+            } if(args[1] == "11"){
+                battlechannel = "<#869934958012137512>"
+                battlerole = "869990176468918302"
+            }
+            if(args[2] == "FN"){
+                ownerclan = "721298502973390859"
+                nameclan = "FN"
+            } if(args[2] == "TFC"){
+                ownerclan = "449051636896104448"
+                nameclan = "TFC"
+            } if(args[2] == "BDSM"){
+                ownerclan = "494285581053067294"
+                nameclan = "BDSM"
+            } if(args[2] == "TDR"){
+                ownerclan = "710320340466925628"
+                nameclan = "TDR"
+            } if(args[2] == "Wummy" || args[2] == "wummy"){
+                ownerclan = "721895613809033237"
+                nameclan = "Wummy"
+            } if(args[2] == "FaKe"){
+                ownerclan = "700323928014323792"
+                nameclan = "FaKe"
+            }
+            
+            
+                //message.guild.members.cache.get(ownerclan).roles.remove(battlerole);
+            if(battlechannel.length > 0 && nameclan.length > 0){
+                message.channel.send("**[" + nameclan + "]**'s access to " + battlechannel + " was removed.")
+            }
+            battlechannel = ""
+            nameclan = ""
         }
     break;
 
@@ -323,31 +493,31 @@ switch (args[0].toLowerCase()) {
             clanname = "The Frost Core (TFC)";
             clanmembers = `` + message.guild.roles.cache.get("");
             clancolor = "2c9fd0";
-            clanlogo = "https://cdn.discordapp.com/attachments/869302960990093312/869310012734980136/frostcore_1_1.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979306846220318/frostcore_1_1.png"
         }
         if(message.content.split(".members ") == ",Wummy" || message.content.split(".members ") == ",wummy"){
             clanname = "Wummy";
             clanmembers = ``;
             clancolor = "ee6951";
-            clanlogo = "https://media.discordapp.net/attachments/855789700538433557/869303110407954462/197bc6f732498eb313029a108eb115d1.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979360688472084/197bc6f732498eb313029a108eb115d1.png"
         }
         if(message.content.split(".members ") == ",FN"){
             clanname = "Fire Nation (FN)";
             clanmembers = ``;
             clancolor = "ae2020";
-            clanlogo = "https://cdn.discordapp.com/attachments/866773686630481929/869346269519286272/FN_lofo.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979405546565704/FN_lofo.png"
         }
         if(message.content.split(".members ") == ",BDSM"){
             clanname = "BDSM";
             clanmembers = ``;
             clancolor = "bf9944";
-            clanlogo = "https://cdn.discordapp.com/attachments/869302960990093312/869431342054649886/image0.jpg"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979472609300500/image0.png"
         }
         if(message.content.split(".claninfo ") == ",TDR"){
             clanname = "The Death Realm (TDR)";
             clanmembers = ``;
             clancolor = "ff3030";
-            clanlogo = "https://cdn.discordapp.com/attachments/869743818998702101/869743873419800626/TDR_SIGN.png"
+            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979567467683900/TDR_SIGN.png"
         }
 
         const embedA5 = new Discord.MessageEmbed()
