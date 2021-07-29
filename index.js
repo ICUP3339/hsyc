@@ -23,7 +23,6 @@ var clanowner = "";
 var clandiscord = "";
 var clanlogo = "";
 var clancolor = "";
-//var clanmembers = ``;
 
 client.on("message", message => {
     if(message.content.startsWith(".iam ") && !message.member.roles.cache.has("869257733776482324")){
@@ -145,6 +144,7 @@ switch (args[0].toLowerCase()) {
             .addField(".claninfo [Clan]", "Displays informations about a clan.")
             .addField(".clans", "Shows list of currently registered clans.")
             .addField(".ping", "Gives bot's exact ping latency.")
+            .addField(".cohelp (For Clan Owners)", "Presents commands limited to clan owners.")
         message.channel.send(embed1)
     break;
 
@@ -163,8 +163,8 @@ switch (args[0].toLowerCase()) {
             const embed3 = new Discord.MessageEmbed()
                 .setColor("#1b82cc")
                 .setTitle("Provoco Clan Bot: Staff")
-                .addField(".ba :warning:", "Gives access for a clan owner/rep to a battle channel.")
-                .addField(".de :warning:", "Removes access from a clan owner/rep to a battle channel.")
+                .addField(".ba [Battlefield] [Clan]", "Gives access for a clan owner/rep to a battle channel.")
+                .addField(".de [Battlefield] [Clan]", "Removes access from a clan owner/rep to a battle channel.")
                 .addField(".verify [User]", "Confirms an unverified user.")
                 .addField(".clear [Number]", "Purges a defined amount of messages.")
             message.channel.send(embed3)
@@ -357,14 +357,44 @@ switch (args[0].toLowerCase()) {
                 ownerclan = "700323928014323792"
                 nameclan = "FaKe"
             }
-                //message.guild.members.cache.get(ownerclan).roles.add(battlerole);
-                //battlechannel = message.guild.channels.cache.find("name", "🔒-battle-" + args[1])
-            //var xx = message.guild.roles.cache.find("name", "battle " + args[1])
-            //var oo = message.guild.members.cache.get(ownerclan);
-            //message.guild.members.cache.get(ownerclan).roles.add(battlerole);
-            //client.users.cache.get(ownerclan).send("Your clan is having a war now. Check " + battlechannel + ".")
-            //message.channel.send("<@" + ownerclan + ">, <@&" + battlerole + ">")
+
             if(battlechannel.length > 0 && nameclan.length > 0){
+                if(nameclan == "FN"){
+                    let uu = message.guild.members.fetch('721298502973390859')
+                    uu.then(function(vv){
+                        vv.roles.add(battlerole)
+                    })
+                }
+                if(nameclan == "TFC"){
+                    let uu = message.guild.members.fetch('449051636896104448')
+                    uu.then(function(vv){
+                        vv.roles.add(battlerole)
+                    })
+                }
+                if(nameclan == "BDSM"){
+                    let uu = message.guild.members.fetch('494285581053067294')
+                    uu.then(function(vv){
+                        vv.roles.add(battlerole)
+                    })
+                }
+                if(nameclan == "TDR"){
+                    let uu = message.guild.members.fetch('710320340466925628')
+                    uu.then(function(vv){
+                        vv.roles.add(battlerole)
+                    })
+                }
+                if(nameclan == "Wummy"){
+                    let uu = message.guild.members.fetch('721895613809033237')
+                    uu.then(function(vv){
+                        vv.roles.add(battlerole)
+                    })
+                }
+                if(nameclan == "FaKe"){
+                    let uu = message.guild.members.fetch('700323928014323792')
+                    uu.then(function(vv){
+                        vv.roles.add(battlerole)
+                    })
+                }
                 message.channel.send("**[" + nameclan + "]** was given access to " + battlechannel + ".")
             }
             battlechannel = ""
@@ -427,10 +457,44 @@ switch (args[0].toLowerCase()) {
                 ownerclan = "700323928014323792"
                 nameclan = "FaKe"
             }
-            
-            
-                //message.guild.members.cache.get(ownerclan).roles.remove(battlerole);
+
             if(battlechannel.length > 0 && nameclan.length > 0){
+                if(nameclan == "FN"){
+                    let uu = message.guild.members.fetch('721298502973390859')
+                    uu.then(function(vv){
+                        vv.roles.remove(battlerole)
+                    })
+                }
+                if(nameclan == "TFC"){
+                    let uu = message.guild.members.fetch('449051636896104448')
+                    uu.then(function(vv){
+                        vv.roles.remove(battlerole)
+                    })
+                }
+                if(nameclan == "BDSM"){
+                    let uu = message.guild.members.fetch('494285581053067294')
+                    uu.then(function(vv){
+                        vv.roles.remove(battlerole)
+                    })
+                }
+                if(nameclan == "TDR"){
+                    let uu = message.guild.members.fetch('710320340466925628')
+                    uu.then(function(vv){
+                        vv.roles.remove(battlerole)
+                    })
+                }
+                if(nameclan == "Wummy"){
+                    let uu = message.guild.members.fetch('721895613809033237')
+                    uu.then(function(vv){
+                        vv.roles.remove(battlerole)
+                    })
+                }
+                if(nameclan == "FaKe"){
+                    let uu = message.guild.members.fetch('700323928014323792')
+                    uu.then(function(vv){
+                        vv.roles.remove(battlerole)
+                    })
+                }
                 message.channel.send("**[" + nameclan + "]**'s access to " + battlechannel + " was removed.")
             }
             battlechannel = ""
@@ -484,54 +548,6 @@ switch (args[0].toLowerCase()) {
         message.channel.send(newEmbed)
         }
     break;
-
-    
-    
-
-    /*case "members":
-        if(message.content.split(".members ") == ",TFC"){
-            clanname = "The Frost Core (TFC)";
-            clanmembers = `` + message.guild.roles.cache.get("");
-            clancolor = "2c9fd0";
-            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979306846220318/frostcore_1_1.png"
-        }
-        if(message.content.split(".members ") == ",Wummy" || message.content.split(".members ") == ",wummy"){
-            clanname = "Wummy";
-            clanmembers = ``;
-            clancolor = "ee6951";
-            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979360688472084/197bc6f732498eb313029a108eb115d1.png"
-        }
-        if(message.content.split(".members ") == ",FN"){
-            clanname = "Fire Nation (FN)";
-            clanmembers = ``;
-            clancolor = "ae2020";
-            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979405546565704/FN_lofo.png"
-        }
-        if(message.content.split(".members ") == ",BDSM"){
-            clanname = "BDSM";
-            clanmembers = ``;
-            clancolor = "bf9944";
-            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979472609300500/image0.png"
-        }
-        if(message.content.split(".claninfo ") == ",TDR"){
-            clanname = "The Death Realm (TDR)";
-            clanmembers = ``;
-            clancolor = "ff3030";
-            clanlogo = "https://cdn.discordapp.com/attachments/869744024209195018/869979567467683900/TDR_SIGN.png"
-        }
-
-        const embedA5 = new Discord.MessageEmbed()
-            .setColor("#" + clancolor)
-            .setTitle("" + clanname + "")
-            .setDescription(clanmembers)
-            .setThumbnail(clanlogo)
-        message.channel.send(embedA5)
-
-        clancolor = ""
-        clanname  = ""
-        clanmembers = ""
-        clanlogo = ""
-    break;*/
 
     }
 
